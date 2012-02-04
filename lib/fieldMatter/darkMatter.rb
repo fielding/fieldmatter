@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 # FieldMatter::DarkMatter
 
 # require
@@ -10,7 +9,7 @@ require 'ohm/contrib'   # Used by fieldMatter:Note
 class FieldMatter
   
   class DarkMatter
-    attr_reader :repo_path, :repo, :what_matters
+    attr_reader :repo, :repo_path, :what_matters
     
     def initialize( repo_path )
       @repo_path = repo_path
@@ -36,12 +35,6 @@ class FieldMatter
         end
       end
     end
-
-    def update_repo( repo_path ) # all inclusive method called from post-receieve hooks that will initialize a new object and update 
-      self.new( repo_path)
-      self.update
-    end
-
   end
 end
 

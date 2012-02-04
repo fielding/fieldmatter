@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 # FieldMatter::Tag
 
 # requires
