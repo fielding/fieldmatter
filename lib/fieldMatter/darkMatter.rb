@@ -61,12 +61,3 @@ end
 #  end
 
 
-# Emulate the git post-receive hook here for testing
-#yadda yadda script initialization for post-receive/env info
-
-#require'filedMatter' - require the fieldMatter gem in the post-receieve file
-
-
-#FieldMatter::DarkMatter.update_repo('/Users/fielding/notes')
-
-

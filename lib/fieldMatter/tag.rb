@@ -5,7 +5,7 @@
 
 class FieldMatter
   
-  class Tag
+  class Tag < Ohm::Model
     counter :total
     
     def self.[](id)

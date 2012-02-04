@@ -5,7 +5,7 @@
 
 class FieldMatter
   
-  class Note
+  class Note < Ohm::Model
     include Ohm::Callbacks
 
     attribute :filename
