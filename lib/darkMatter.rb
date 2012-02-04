@@ -59,7 +59,7 @@ end
 
 
 
-# testbed
+# testbed - need to refactor still, but will check for existing and then create or update depending
   dm = FieldMatter::DarkMatter.new('/Users/fielding/notes')
   dm.what_matters.each do | key, value |
     if not FieldMatter::Note.find(filename: key).empty?
@@ -67,19 +67,9 @@ end
       canon = Base64.encode64(key).chomp 
       id = Ohm.redis.smembers("FieldMatter::Note:filename:#{canon}").pop
       note = FieldMatter::Note[id]
-      p note.tags
-      p value['kMDItemOMUserTags']
       note.update(:tags => value['kMDItemOMUserTags'])
-      p FieldMatter::Note[id]
     else
       puts "file doesn't exist, let's create it" 
     FieldMatter::Note.create(:filename => key, :tags => value['kMDItemOMUserTags'])
     end
   end
-
-  #testbed: let's do a search for files with the tag "fieldnote"
-  #results = FieldMatter::Note.find(tag: ["fieldnote"])
-  #results.all.each {|obj| puts obj.filename}
-
-  #results = FieldMatter::Note.find(filename: ["fieldnote.md"])
-  #puts results.inspect
