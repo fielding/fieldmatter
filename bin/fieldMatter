@@ -1,0 +1,55 @@
+#!/usr/bin/env ruby
+# bin/fieldmatter - fieldmatter Ruby Gem executeable for clientside fieldmatter syncing
+
+#require 'fieldmatter' # eventually will only need gem name
+require '/Users/fielding/work/fieldmatter/lib/fieldmatter.rb' # temporary for development of gem
+require 'optparse'
+
+
+maximum_line_length = 80
+
+
+module Colorize
+  def purple ( text )
+    colorized_output = true
+    purple = "\e[35m"
+    reset_color = "\e[0m"
+
+    output = text
+    if colorized_output
+      output.insert(0, purple) # start purple color
+      output.insert(-1, reset_color) # reset color back to what it was
+    end
+  end
+end
+
+OptionParser.new do |op|
+  include Colorize
+  # set banner for help documentation
+  op.set_banner(purple("Usage:") + " fieldmatter [options]\n" \
+    + purple("Description:") + " Clientside utility for working with tags, extended attributes and openmeta data")
+  op.separator " "
+  op.separator(purple("Specific options:"))
+
+  op.on("--no-color", "Disable colorized output") do |color|
+    colorized_output = color
+  end
+
+  op.on_tail("-h", "--help", "Displays this help message") do
+    $stderr.puts op
+    exit 1
+  end
+
+  op.on_tail("--version", "Prints the version") do
+    puts FieldMatter::VERSION
+    exit
+  end
+end.parse!
+
+
+# taken from old fieldmatter.rb file, needs lots of cleanup, but for now it works
+
+sm = FieldMatter::StrangeMatter.new('/Users/fielding/notes')
+sm.update
+
+## might add update_repo( repo ) for StrangeMatter that combines the above in to one line
