@@ -24,9 +24,9 @@ class FieldMatter
           canon = Base64.encode64(key).chomp
           id = Ohm.redis.smembers("FieldMatter::Note:filename:#{canon}").pop
           note = FieldMatter::Note[id]
-          note.update(:tags => value['kMDItemOMUserTags'])
+          note.update(:tags => value['kMDItemOMUserTags'].join(', '))
         else
-          FieldMatter::Note.create(:filename => key, :tags => value['kMDItemOMUserTags'])
+          FieldMatter::Note.create(:filename => key, :tags => value['kMDItemOMUserTags'].join(', '))
         end
       end
     end

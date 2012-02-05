@@ -15,7 +15,7 @@ class FieldMatter
     index :filename
 
     def tag(tags = self.tags)
-      return tags
+      tags.to_s.split(/\s*,\s*/).uniq
     end
   
     # I don't full understand callbacks, so this is fubar. Will try to fix soon
