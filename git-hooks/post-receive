@@ -1,8 +1,11 @@
 #!/Users/fielding/.rbenv/versions/1.9.2-p290/bin/ruby
 # FieldMatter - git post-receive hook
 
-require '/Users/fielding/work/fieldmatter/lib/fieldmatter.rb'
+$LOAD_PATH.unshift(File.dirname(__FILE__) + '/../lib') unless $LOAD_PATH.include?(File.dirname(__FILE__) + '/../lib')
 
+require 'fieldmatter'
+
+# TODO: add configuration for repo directory
 dm = FieldMatter::DarkMatter.new('/Users/fielding/notes')
 dm.update
 

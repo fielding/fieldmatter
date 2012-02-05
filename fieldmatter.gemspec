@@ -18,7 +18,13 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
+  s.add_dependency("grit", "~>2.4")
+  s.add_dependency("json", "~>1.6")
+  s.add_dependency("ohm", "~>0.1.3")
+  s.add_dependency("ohm-contrib", "~>0.1.2")
+
   # specify any dependencies here; for example:
   # s.add_development_dependency "rspec"
   # s.add_runtime_dependency "rest-client"
+
 end

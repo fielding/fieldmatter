@@ -1,8 +1,10 @@
 #!/usr/bin/env ruby
 # bin/fieldmatter - fieldmatter Ruby Gem executeable for clientside fieldmatter syncing
 
-#require 'fieldmatter' # eventually will only need gem name
-require '/Users/fielding/work/fieldmatter/lib/fieldmatter.rb' # temporary for development of gem
+# add lib to ruby's load path
+$LOAD_PATH.unshift(File.dirname(__FILE__) + '/../lib') unless $LOAD_PATH.include?(File.dirname(__FILE__) + '/../lib')
+
+require 'fieldmatter'
 require 'optparse'
 
 
