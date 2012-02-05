@@ -1,17 +1,17 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "fieldMatter/version"
+require "fieldmatter/version"
 
 Gem::Specification.new do |s|
-  s.name        = "fieldMatter"
+  s.name        = "fieldmatter"
   s.version     = FieldMatter::VERSION
   s.authors     = ["Fielding Johnston"]
   s.email       = ["fielding@justfielding.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/justfielding/fieldMatter"
   s.summary     = %q{TODO: Write a gem summary}
   s.description = %q{TODO: Write a gem description}
 
-  s.rubyforge_project = "fieldMatter"
+  s.rubyforge_project = "fieldmatter"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

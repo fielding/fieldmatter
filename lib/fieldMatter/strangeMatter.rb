@@ -19,7 +19,7 @@ class FieldMatter
       changes = self.repo.status.changed        # Determine files/objects in the git repo that have been flagged for update
       
       changes.delete(".gitignore")              # Any non-tagged/tag-important files that aren't ignored in .gitignore or info/exclude 
-      changes.delete("fieldMatter.json")        # are potential problems/waste of database space. This will delete them if they turn up.
+      changes.delete("fieldmatter.json")        # are potential problems/waste of database space. This will delete them if they turn up.
       
       changes.keys.each do |file|               # for each file that has changed
         self.mdluvin( file )                    # show these files some mdluvin; aka get a list of extended attribute openmeta tags from mdls.
@@ -52,7 +52,7 @@ class FieldMatter
 
     def write_to_json
       json_matters = self.as_json( self.what_matters )
-      File.open("#{self.repo_path}/fieldMatter.json", "w") do |f|
+      File.open("#{self.repo_path}/fieldmatter.json", "w") do |f|
         f.write(json_matters)
       end
     end

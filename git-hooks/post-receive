@@ -1,7 +1,7 @@
 #!/Users/fielding/.rbenv/versions/1.9.2-p290/bin/ruby
 # FieldMatter - git post-receive hook
 
-require '/Users/fielding/work/fieldMatter/lib/fieldMatter.rb'
+require '/Users/fielding/work/fieldmatter/lib/fieldmatter.rb'
 
 dm = FieldMatter::DarkMatter.new('/Users/fielding/notes')
 dm.update

@@ -1,6 +1,8 @@
 # FieldMatter:Note
 
 # requires
+require 'ohm'
+require 'ohm/contrib'
 
 class FieldMatter
   

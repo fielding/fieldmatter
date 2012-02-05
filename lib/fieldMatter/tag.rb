@@ -1,6 +1,7 @@
 # FieldMatter::Tag
 
 # requires
+require 'ohm'
 
 class FieldMatter
   
