@@ -1,10 +1,6 @@
 # FieldMatter::DarkMatter
 
 # require
-require 'ohm'
-require 'ohm/contrib'
-require 'JSON'
-require 'grit'
 
 class FieldMatter
   class DarkMatter

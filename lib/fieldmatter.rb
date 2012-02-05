@@ -7,7 +7,7 @@ require "bundler/setup"
 
 # external
 require "grit"
-require "JSON"
+require "json"
 
 # internal 
 require File.expand_path('../fieldmatter/strangematter', __FILE__)

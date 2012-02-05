@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version     = FieldMatter::VERSION
   s.authors     = ["Fielding Johnston"]
   s.email       = ["fielding@justfielding.com"]
-  s.homepage    = "https://github.com/justfielding/fieldMatter"
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.homepage    = 'https://github.com/justfielding/fieldMatter'
+  s.summary     = "taxonomy with redis and extended attributes"
+  s.description = "Library used in the fieldnote personal content management system. I wrote this library to assist in accessing extended attributes from support operating systems and then transferring them, despite the git backend, to the fieldnote server. Once there they are stored in a redis database for further manipulation."
 
   s.rubyforge_project = "fieldmatter"
 
